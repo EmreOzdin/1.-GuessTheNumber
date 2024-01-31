@@ -1,4 +1,4 @@
-import { View, TextInput } from "react-native";
+import { View, Text } from "react-native";
 
 function PrimaryButton({ children }) {
   return (

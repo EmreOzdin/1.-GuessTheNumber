@@ -20,5 +20,6 @@ const styles = StyleSheet.create({
     padding: 16,
     backgroundColor: "#72063c",
     borderRadius: 8,
+    elevation: 4,
   },
 });
