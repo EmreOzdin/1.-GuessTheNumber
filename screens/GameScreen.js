@@ -68,11 +68,10 @@ function GameScreen({ userNumber, onGameOver }) {
               <Feather name="plus" size={24} color="white" />
             </PrimaryButton>
           </View>
-          <View style={styles.buttonContainer}>
-            <PrimaryButton onPress={nextGuessHandler.bind(this, "greater")}>
-              <Feather name="minus" size={24} color="white" />
-            </PrimaryButton>
-          </View>
+          <View style={styles.buttonContainer}></View>
+          <PrimaryButton onPress={nextGuessHandler.bind(this, "greater")}>
+            <Feather name="minus" size={24} color="white" />
+          </PrimaryButton>
         </View>
       </Card>
       {/* <View>{/*LOG ROUNDS </View> */}
