@@ -84,19 +84,17 @@ function GameScreen({ userNumber, onGameOver }) {
 
   if (width > 500) {
     content = (
-      <View>
-        <View style={styles.buttonContainerWide}>
-          <View style={styles.buttonContainer}>
-            <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
-              <Feather name="minus" size={24} color="white" />
-            </PrimaryButton>
-          </View>
-          <NumberContainer>{currentGuess}</NumberContainer>
-          <View style={styles.buttonContainer}>
-            <PrimaryButton onPress={nextGuessHandler.bind(this, "greater")}>
-              <Feather name="plus" size={24} color="white" />
-            </PrimaryButton>
-          </View>
+      <View style={styles.buttonContainerWide}>
+        <View style={styles.buttonContainer}>
+          <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
+            <Feather name="minus" size={24} color="white" />
+          </PrimaryButton>
+        </View>
+        <NumberContainer>{currentGuess}</NumberContainer>
+        <View style={styles.buttonContainer}>
+          <PrimaryButton onPress={nextGuessHandler.bind(this, "greater")}>
+            <Feather name="plus" size={24} color="white" />
+          </PrimaryButton>
         </View>
       </View>
     );
