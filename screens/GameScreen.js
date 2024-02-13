@@ -5,7 +5,6 @@ import {
   Alert,
   FlatList,
   useWindowDimensions,
-  Text,
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
@@ -77,26 +76,40 @@ function GameScreen({ userNumber, onGameOver }) {
   let content = (
     <>
       <Card>
-        <View style={styles.buttonsContainer}></View>
+        <View style={styles.buttonContainerWide}>
+          <View style={styles.buttonContainer}>
+            <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
+              <Feather name="minus" size={24} color="white" />
+            </PrimaryButton>
+          </View>
+          <NumberContainer>{currentGuess}</NumberContainer>
+          <View style={styles.buttonContainer}>
+            <PrimaryButton onPress={nextGuessHandler.bind(this, "greater")}>
+              <Feather name="plus" size={24} color="white" />
+            </PrimaryButton>
+          </View>
+        </View>
       </Card>
     </>
   );
 
   if (width > 500) {
     content = (
-      <View style={styles.buttonContainerWide}>
-        <View style={styles.buttonContainer}>
-          <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
-            <Feather name="minus" size={24} color="white" />
-          </PrimaryButton>
+      <>
+        <View style={styles.buttonContainerWide}>
+          <View style={styles.buttonContainer}>
+            <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
+              <Feather name="minus" size={24} color="white" />
+            </PrimaryButton>
+          </View>
+          <NumberContainer>{currentGuess}</NumberContainer>
+          <View style={styles.buttonContainer}>
+            <PrimaryButton onPress={nextGuessHandler.bind(this, "greater")}>
+              <Feather name="plus" size={24} color="white" />
+            </PrimaryButton>
+          </View>
         </View>
-        <NumberContainer>{currentGuess}</NumberContainer>
-        <View style={styles.buttonContainer}>
-          <PrimaryButton onPress={nextGuessHandler.bind(this, "greater")}>
-            <Feather name="plus" size={24} color="white" />
-          </PrimaryButton>
-        </View>
-      </View>
+      </>
     );
   }
 
@@ -135,7 +148,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   buttonsContainer: {
-    flexDirection: "row",
+    flexDirection: "column",
   },
   buttonContainer: {
     flex: 1,
