@@ -17,7 +17,7 @@ import InstructionText from "../components/ui/InstructionText";
 function StartGameScreen({ onPickNumber }) {
   const [enteredNumber, setEnteredNumber] = useState("");
 
-  const [width, height] = useWindowDimensions();
+  const { width, height } = useWindowDimensions();
 
   function numberInputHandler(enteredText) {
     setEnteredNumber(enteredText);
@@ -70,12 +70,12 @@ function StartGameScreen({ onPickNumber }) {
 
 export default StartGameScreen;
 
-const deviceHeight = Dimensions.get("window").height;
+//const deviceHeight = Dimensions.get("window").height;
 
 const styles = StyleSheet.create({
   rootContainer: {
     flex: 1,
-    marginTop: deviceHeight < 380 ? 30 : 100,
+    //marginTop: deviceHeight < 380 ? 30 : 100,
     alignItems: "center",
   },
   numberInput: {
